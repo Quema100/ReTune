@@ -447,7 +447,7 @@ const updateToggleUI = (videoElement, workletUrl) => {
     if (valueDisplay) {
         const ratio = window.__pitchVal || 1.0;
         const cents = 1200 * Math.log2(ratio);
-        const targetText = Math.abs(cents) < 0.05 ? "0.0 ¢" : `${cents > 0 ? '+' : ''}${cents.toFixed(2)} ¢`;
+        const targetText = Math.abs(cents) < 0.05 ? "0.00 ¢" : `${cents > 0 ? '+' : ''}${cents.toFixed(2)} ¢`;
         if (valueDisplay.textContent !== targetText) valueDisplay.textContent = targetText;
     }
 
