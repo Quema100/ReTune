@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "ReTune",
+  "version": "1.0.0",
+  "description": "extensions by Quema",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "watch.js",
+        "pitch-processor.js"
+      ],
+      "matches": [
+        "https://www.youtube.com/*"
+      ]
+    }
+  ]
+}
