@@ -18,7 +18,8 @@ git clone https://github.com/Quema100/TubePeek.git
 
 ## Demo video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gj4IPlrIhu0?si=FLXLvbVf-RrrX926" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+https://github.com/user-attachments/assets/b5d06f64-f2e8-4a13-bb70-ade63160ebb0
+
 
 ## Contributing
 Feel free to fork this repository, open issues, and submit pull requests. Suggestions for improving realism, or code quality are welcome.
