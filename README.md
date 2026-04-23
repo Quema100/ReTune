@@ -16,6 +16,10 @@ git clone https://github.com/Quema100/TubePeek.git
 > Once you have downloaded the folder, go to **`chrome://extensions/`** in your Chrome browser.  
 > enable the developer mode, and then load the extension by selecting the downloaded folder.
 
+## Demo video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gj4IPlrIhu0?si=FLXLvbVf-RrrX926" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Contributing
 Feel free to fork this repository, open issues, and submit pull requests. Suggestions for improving realism, or code quality are welcome.
 
