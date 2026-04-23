@@ -40,17 +40,17 @@ const setupMenuObserver = (videoElement, workletUrl, settingsMenu) => {
                 if (isVisible) {
                     const menuList = settingsMenu.querySelector('div[class="ytp-panel-menu"]');
                     const panel = settingsMenu.querySelector('div[class="ytp-panel"]');
-                    if (menuList && !document.getElementById('pitch-control-panel') && !document.getElementById('.ytp-menuiteml')) {
+                    if (menuList && !document.getElementById('pitch-control-panel') && document.querySelector('div[role="menuitem"]')) {
                         const ui = injectionUi(videoElement, workletUrl);
                         const items = menuList.children;
                         const targetPos = items[items.length - 2] || null;
                         menuList.insertBefore(ui, targetPos);
 
                         const autoHeight = `${menuList.scrollHeight}px`;
-
-                        menuList.style.height = autoHeight;
-                        panel.style.height = autoHeight;
-                        settingsMenu.style.height = autoHeight;
+                        
+                        if (menuList.style.height !== autoHeight) menuList.style.height = autoHeight;
+                        if (panel.style.height !== autoHeight) panel.style.height = autoHeight;
+                        if (settingsMenu.style.height !== autoHeight) settingsMenu.style.height = autoHeight;
                     }
                 } else {
                     const panel = settingsMenu.querySelector('div[class="ytp-panel"]');
@@ -60,9 +60,9 @@ const setupMenuObserver = (videoElement, workletUrl, settingsMenu) => {
                         const menuList = settingsMenu.querySelector('div[class="ytp-panel-menu"]');
                         const autoHeight = `${menuList.scrollHeight}px`;
 
-                        menuList.style.height = autoHeight;
-                        panel.style.height = autoHeight;
-                        settingsMenu.style.height = autoHeight;
+                        if (menuList.style.height !== autoHeight) menuList.style.height = autoHeight;
+                        if (panel.style.height !== autoHeight) panel.style.height = autoHeight;
+                        if (settingsMenu.style.height !== autoHeight) settingsMenu.style.height = autoHeight;
 
                         savedItems = [];
                     }
@@ -359,26 +359,29 @@ const controlUi = (videoElement, workletUrl) => {
 
     controllerContentHeaderToggleBackground.onclick = () => { window.__pitchActive = !window.__pitchActive; updateToggleUI(videoElement, workletUrl); };
 
-    controllerHeader.onclick = () => {
-        setupMenu.classList.add('ytp-popup-animating');
-        panel.classList.add('ytp-panel-animate-forward');
-
-        setTimeout(() => {
-            panel.replaceChildren(...savedItems);
-
-            setupMenu.style.height = autoHeight;
-            setupMenu.style.width = '353px';
-            panel.style.height = autoHeight;
-            panel.style.width = '353px';
-
-            savedItems = [];
+    [headerTitle, backButton].forEach((element) => {
+        if (!element) return;
+        element.onclick = () => {
+            setupMenu.classList.add('ytp-popup-animating');
+            panel.classList.add('ytp-panel-animate-forward');
 
             setTimeout(() => {
-                setupMenu.classList.remove('ytp-popup-animating');
-                panel.classList.remove('ytp-panel-animate-forward');
-            }, 200);
-        }, 50);
-    }
+                panel.replaceChildren(...savedItems);
+
+                setupMenu.style.height = autoHeight;
+                setupMenu.style.width = '353px';
+                panel.style.height = autoHeight;
+                panel.style.width = '353px';
+
+                savedItems = [];
+
+                setTimeout(() => {
+                    setupMenu.classList.remove('ytp-popup-animating');
+                    panel.classList.remove('ytp-panel-animate-forward');
+                }, 200);
+            }, 50);
+        }
+    });
 
     slider.oninput = (event) => {
         updateSliderFill(event.target);
