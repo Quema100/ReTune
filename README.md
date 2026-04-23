@@ -16,7 +16,7 @@ git clone https://github.com/Quema100/TubePeek.git
 > Once you have downloaded the folder, go to **`chrome://extensions/`** in your Chrome browser.  
 > enable the developer mode, and then load the extension by selecting the downloaded folder.
 
-## Demo video
+## [Demo video](https://www.youtube.com/watch?v=gj4IPlrIhu0)
 
 https://github.com/user-attachments/assets/b5d06f64-f2e8-4a13-bb70-ade63160ebb0
 
