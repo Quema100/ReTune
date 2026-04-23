@@ -3,6 +3,11 @@
   "name": "ReTune",
   "version": "1.0.0",
   "description": "extensions by Quema",
+  "icons": {
+    "16": "public/retune.png",
+    "48": "public/retune.png",
+    "128": "public/retune.png"
+  },
   "content_scripts": [
     {
       "matches": [
